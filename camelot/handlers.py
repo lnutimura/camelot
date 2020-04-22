@@ -119,6 +119,7 @@ class PDFHandler(object):
                     outfile.write(f)
 
                 # Orient rotated pages correctly
+                """
                 layout, dim = get_page_layout(fpath)
                 chars = get_text_objects(layout, ltype="char")
                 horizontal_text = get_text_objects(layout, ltype="horizontal_text")
@@ -139,6 +140,7 @@ class PDFHandler(object):
                     outfile.addPage(p)
                     with open(fpath, 'wb') as f:
                         outfile.write(f)
+                """
 
     def parse(
         self, flavor="lattice", suppress_stdout=False, layout_kwargs={}, **kwargs
