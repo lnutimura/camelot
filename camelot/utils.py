@@ -29,7 +29,6 @@ from pdfminer.layout import (
     LTImage,
 )
 
-
 PY3 = sys.version_info[0] >= 3
 if PY3:
     from urllib.request import urlopen
@@ -811,8 +810,6 @@ def get_page_layout(
             width = layout.bbox[2]
             height = layout.bbox[3]
             dim = (width, height)
-            if isinstance(width, float) and isinstance(height, float):
-                return layout, dim
         return layout, dim
 
 
