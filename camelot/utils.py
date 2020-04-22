@@ -811,6 +811,8 @@ def get_page_layout(
             width = layout.bbox[2]
             height = layout.bbox[3]
             dim = (width, height)
+            if isinstance(width, float) and isinstance(height, float):
+                return layout, dim
         return layout, dim
 
 
