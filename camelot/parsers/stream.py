@@ -406,7 +406,10 @@ class Stream(BaseParser):
                 if indices[:2] != (-1, -1):
                     pos_errors.append(error)
                     for r_idx, c_idx, text in indices:
-                        table.cells[r_idx][c_idx].text = text
+                        try:
+                            table.cells[r_idx][c_idx].text = text
+                        except IndexError:
+                            pass
         accuracy = compute_accuracy([[100, pos_errors]])
 
         data = table.data
